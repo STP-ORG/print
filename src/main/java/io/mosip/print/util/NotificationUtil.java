@@ -52,7 +52,7 @@ public class NotificationUtil {
     @Value("${mosip.default.user-preferred-language-attribute:#{null}}")
     private String userPreferredLanguageAttribute;
 
-    private static final Map languageCodes = Map.of("English","eng","français","fra","Española","spa");
+    private static final Map languageCodes = Map.of("English","eng","français","fra","Española","spa","Português","por");
     private static final String EMAIL_SUB_DEFAULT = "UIN Card Attached!";
     private static final String EMAIL_DEFAULT = "Your UIN Card is attached.";
 
