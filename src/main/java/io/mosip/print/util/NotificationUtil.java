@@ -75,7 +75,10 @@ public class NotificationUtil {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.MULTIPART_FORM_DATA);
         String preferredLang = (String) attributes.get(userPreferredLanguageAttribute);
-        String langCode = (String) languageCodes.get(preferredLang);
+        String langCode =primaryLang;
+        if(languageCodes.containsKey(preferredLang)){
+            langCode = (String) languageCodes.get(preferredLang);
+        }
         emailMap.add("mailContent", getEmailContent(emailContentTpl, attributes, langCode));
         emailMap.add("mailSubject", getEmailSubject(emailSubTpl, attributes, langCode));
 
